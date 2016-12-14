@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+//AppID:?
+//rJQ5l2z65Z75aDE4hOZst3
+//AppKey：?
+//Ti10CARLOP8rzmLBCKt9e2
+//AppSecret：?
+//XUb9UWNCIo6lvQLhaAS3GA
+//MasterSecret：?
+//
+//hSVMd9cdrfAF2689SeiWq2
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+
+    defaultConfig {
+        applicationId "gjcm.kxf.getuikxftest"
+        minSdkVersion 21
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        manifestPlaceholders = [
+                GETUI_APP_ID : "rJQ5l2z65Z75aDE4hOZst3",
+                GETUI_APP_KEY : "Ti10CARLOP8rzmLBCKt9e2",
+                GETUI_APP_SECRET : "XUb9UWNCIo6lvQLhaAS3GA"
+        ]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.android.support:support-v4:+'
+    compile files('libs/GetuiSDK2.9.5.0.jar')
+    compile files('libs/json_simple-1.1.jar')
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+    compile files('libs/Msc.jar')
+    compile files('libs/Sunflower.jar')
+}
